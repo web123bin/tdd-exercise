@@ -2,8 +2,8 @@ package com.bin.shop.entity;
 
 import java.io.Serializable;
 import java.time.LocalDateTime;
-import lombok.Getter;
-import lombok.Setter;
+
+import lombok.*;
 
 /**
  * <p>
@@ -13,8 +13,7 @@ import lombok.Setter;
  * @author bin
  * @since 2023-08-09
  */
-@Getter
-@Setter
+@Data
 public class User implements Serializable {
 
     private static final long serialVersionUID = 1L;
@@ -70,4 +69,5 @@ public class User implements Serializable {
      * 备注
      */
     private String remark;
+
 }
