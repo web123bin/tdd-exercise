@@ -13,4 +13,5 @@ import com.baomidou.mybatisplus.core.mapper.BaseMapper;
  */
 public interface RechargeRecordMapper extends BaseMapper<RechargeRecord> {
 
+    int addMoney(int id, int money);
 }

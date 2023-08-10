@@ -5,7 +5,10 @@ import org.junit.jupiter.api.Test;
 
 import java.util.HashMap;
 
-public class ConsumeControllerTest extends ControllerTestBase {
+public class BugRecordControllerTest extends ControllerTestBase {
+
+    public static final String URI = "/shop/buy-record";
+
     @Override
     public void beforeTest() {
 
@@ -18,7 +21,7 @@ public class ConsumeControllerTest extends ControllerTestBase {
 
     @Test
     public void buyGood() throws Exception {
-        post("/buyGood",
+        post(URI,
                 new HashMap<String, String>() {{
                     put("id", "1");
                     put("goodName","apple");

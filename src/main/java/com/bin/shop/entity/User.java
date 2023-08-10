@@ -13,7 +13,8 @@ import lombok.*;
  * @author bin
  * @since 2023-08-09
  */
-@Data
+@Getter
+@Setter
 public class User implements Serializable {
 
     private static final long serialVersionUID = 1L;

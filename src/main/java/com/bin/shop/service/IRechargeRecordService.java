@@ -13,4 +13,5 @@ import com.baomidou.mybatisplus.extension.service.IService;
  */
 public interface IRechargeRecordService extends IService<RechargeRecord> {
 
+    int addMoney(int id, int money);
 }

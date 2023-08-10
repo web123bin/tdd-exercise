@@ -32,6 +32,9 @@ public class DBGenerator {
                 .strategyConfig(builder -> {
                     builder.addTablePrefix("t_", "c_"); // 设置过滤表前缀
                     builder.entityBuilder().enableLombok();
+                    builder.controllerBuilder()
+                            .enableHyphenStyle()
+                            .enableRestStyle();
                 })
                 .templateEngine(new FreemarkerTemplateEngine()) // 使用Freemarker引擎模板，默认的是Velocity引擎模板
                 .execute();
