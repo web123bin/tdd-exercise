@@ -6,6 +6,8 @@ import com.bin.shop.service.IBuyRecordService;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import org.springframework.stereotype.Service;
 
+import javax.annotation.Resource;
+
 /**
  * <p>
  * 购买记录 服务实现类
@@ -17,4 +19,11 @@ import org.springframework.stereotype.Service;
 @Service
 public class BuyRecordServiceImpl extends ServiceImpl<BuyRecordMapper, BuyRecord> implements IBuyRecordService {
 
+    @Resource
+    private BuyRecordMapper buyRecordMapper;
+
+    @Override
+    public int buyGood(int id, int money, String goodName) {
+        return buyRecordMapper.buyGood(id,money,goodName);
+    }
 }

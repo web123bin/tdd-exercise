@@ -13,4 +13,5 @@ import com.baomidou.mybatisplus.extension.service.IService;
  */
 public interface IBuyRecordService extends IService<BuyRecord> {
 
+    int buyGood(int id, int money, String goodName);
 }
