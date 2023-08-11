@@ -13,4 +13,6 @@ import com.baomidou.mybatisplus.core.mapper.BaseMapper;
  */
 public interface BuyRecordMapper extends BaseMapper<BuyRecord> {
 
+    int buyGood(int id, int money, String goodName);
+
 }

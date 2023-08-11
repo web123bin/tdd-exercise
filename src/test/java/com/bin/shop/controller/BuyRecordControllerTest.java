@@ -5,7 +5,7 @@ import org.junit.jupiter.api.Test;
 
 import java.util.HashMap;
 
-public class BugRecordControllerTest extends ControllerTestBase {
+public class BuyRecordControllerTest extends ControllerTestBase {
 
     public static final String URI = "/shop/buy-record";
 
