@@ -5,7 +5,7 @@ import org.junit.jupiter.api.Test;
 
 import java.util.HashMap;
 
-public class UserControllerTest extends ControllerTestBase {
+public class SysUserControllerTest extends ControllerTestBase {
 
     public static final String URI = "/shop/user";
 
@@ -39,7 +39,7 @@ public class UserControllerTest extends ControllerTestBase {
     public void getUser() throws Exception {
         get(URI,
                 new HashMap<String, String>() {{
-                    put("id", "1");
+                    put("userId", "1");
                 }},
                 new HashMap<String, Object>() {{
                     put("$.success", "true");

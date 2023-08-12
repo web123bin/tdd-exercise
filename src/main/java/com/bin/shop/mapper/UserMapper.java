@@ -1,7 +1,8 @@
 package com.bin.shop.mapper;
 
-import com.bin.shop.entity.User;
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
+import com.bin.shop.entity.SysUser;
+import org.apache.ibatis.annotations.Param;
 
 /**
  * <p>
@@ -11,9 +12,8 @@ import com.baomidou.mybatisplus.core.mapper.BaseMapper;
  * @author bin
  * @since 2023-08-09
  */
-public interface UserMapper extends BaseMapper<User> {
+public interface UserMapper extends BaseMapper<SysUser> {
 
-    User getUser(int id);
+    int updateUserMoney(@Param("userId") int userId, @Param("totalAddMoney") Integer totalAddMoney, @Param("remainMoney") Integer remainMoney);
 
-    int addUser(User user);
 }

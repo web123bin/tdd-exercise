@@ -1,10 +1,11 @@
 package com.bin.shop.entity;
 
 import com.baomidou.mybatisplus.annotation.TableName;
-import java.io.Serializable;
-import java.time.LocalDateTime;
 import lombok.Getter;
 import lombok.Setter;
+
+import java.io.Serializable;
+import java.time.LocalDateTime;
 
 /**
  * <p>
@@ -29,7 +30,7 @@ public class RechargeRecord implements Serializable {
     /**
      * 用户id
      */
-    private String userId;
+    private Integer userId;
 
     /**
      * 充值金额

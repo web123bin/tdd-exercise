@@ -1,7 +1,8 @@
 package com.bin.shop.mapper;
 
-import com.bin.shop.entity.BuyRecord;
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
+import com.bin.shop.entity.BuyRecord;
+import org.apache.ibatis.annotations.Param;
 
 /**
  * <p>
@@ -13,6 +14,6 @@ import com.baomidou.mybatisplus.core.mapper.BaseMapper;
  */
 public interface BuyRecordMapper extends BaseMapper<BuyRecord> {
 
-    int buyGood(int id, int money, String goodName);
+    int buyGood(@Param("userId") int id, @Param("userMoney") int userMoney, @Param("goodName") String goodName);
 
 }

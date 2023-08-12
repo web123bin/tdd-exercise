@@ -30,7 +30,7 @@ public class BuyRecord implements Serializable {
     /**
      * 用户id
      */
-    private String userId;
+    private Integer userId;
 
     /**
      * 购买商品

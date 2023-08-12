@@ -1,8 +1,10 @@
 package com.bin.shop.service;
 
+import org.apache.ibatis.annotations.Param;
+
 public interface IScoreService {
 
-    int updateUserScore(int id, int money);
+    int updateUserScore(@Param("userId") int userId, @Param("score") int score);
 
-    int calcSore(int i);
+    int calcSore(int money);
 }

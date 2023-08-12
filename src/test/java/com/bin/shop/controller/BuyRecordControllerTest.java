@@ -23,9 +23,9 @@ public class BuyRecordControllerTest extends ControllerTestBase {
     public void buyGood() throws Exception {
         post(URI,
                 new HashMap<String, String>() {{
-                    put("id", "1");
-                    put("goodName","apple");
-                    put("useMoney","1000");
+                    put("userId", "1");
+                    put("goodName", "apple");
+                    put("useMoney", "1000");
                 }},
                 new HashMap<String, Object>() {
                     {

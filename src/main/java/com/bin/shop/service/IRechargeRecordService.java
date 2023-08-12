@@ -1,7 +1,7 @@
 package com.bin.shop.service;
 
-import com.bin.shop.entity.RechargeRecord;
 import com.baomidou.mybatisplus.extension.service.IService;
+import com.bin.shop.entity.RechargeRecord;
 
 /**
  * <p>
@@ -13,5 +13,6 @@ import com.baomidou.mybatisplus.extension.service.IService;
  */
 public interface IRechargeRecordService extends IService<RechargeRecord> {
 
-    int addMoney(int id, int money);
+    int addMoney(int userId, int money);
+
 }

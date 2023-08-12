@@ -1,7 +1,8 @@
 package com.bin.shop.mapper;
 
-import com.bin.shop.entity.RechargeRecord;
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
+import com.bin.shop.entity.RechargeRecord;
+import org.apache.ibatis.annotations.Param;
 
 /**
  * <p>
@@ -13,5 +14,6 @@ import com.baomidou.mybatisplus.core.mapper.BaseMapper;
  */
 public interface RechargeRecordMapper extends BaseMapper<RechargeRecord> {
 
-    int addMoney(int id, int money);
+    int addMoney(@Param("userId") int userId, @Param("money") int money);
+
 }

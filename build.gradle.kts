@@ -27,6 +27,8 @@ dependencies {
     runtimeOnly("mysql:mysql-connector-java:8.0.33")
 
     testImplementation("org.springframework.boot:spring-boot-starter-test")
+    testImplementation("com.baomidou:mybatis-plus-boot-starter-test:3.5.3.1")
+    testImplementation("p6spy:p6spy:3.9.1")
     testImplementation("org.testng:testng:7.4.0")
     testImplementation("com.google.inject:guice:5.1.0")
     testImplementation("org.uncommons:reportng:1.1.4")

@@ -23,8 +23,8 @@ public class RechargeControllerTest extends ControllerTestBase {
     public void addMoney() throws Exception {
         post(URI,
                 new HashMap<String, String>() {{
-                    put("id", "1");
-                    put("addMoney","1000");
+                    put("userId", "1");
+                    put("addMoney", "1000");
                 }},
                 new HashMap<String, Object>() {
                     {

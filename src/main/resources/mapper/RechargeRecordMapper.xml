@@ -3,5 +3,7 @@
 <mapper namespace="com.bin.shop.mapper.RechargeRecordMapper">
 
     <insert id="addMoney">
+        insert into recharge_record (user_id, add_money, create_time, update_time)
+        values (#{userId}, #{money}, now(), now());
     </insert>
 </mapper>

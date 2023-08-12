@@ -1,10 +1,11 @@
 package com.bin.shop.service;
 
-import com.bin.shop.entity.User;
+import com.bin.shop.entity.SysUser;
 import com.bin.shop.mapper.BuyRecordMapper;
 import com.bin.shop.mapper.UserMapper;
 import com.bin.shop.service.impl.BuyRecordServiceImpl;
 import com.bin.shop.utils.ReflectionTddUtils;
+import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
@@ -31,13 +32,20 @@ public class BuyRecordServiceTest {
 
     @Test
     public void buyGood() {
-        User user = new User();
-        user.setId(1);
-        user.setTotalUseMoney(3000);
-        when(userMapper.getUser(1)).thenReturn(user);
+        SysUser sysUser = new SysUser();
+        sysUser.setId(1);
+        sysUser.setTotalAddMoney(3000);
+        sysUser.setTotalUseMoney(0);
+        sysUser.setRemainMoney(3000);
+        when(userMapper.selectById(1)).thenReturn(sysUser);
+        when(userMapper.updateById(sysUser)).thenReturn(1);
         when(scoreService.calcSore(3000)).thenReturn(1);
-        when(scoreService.updateUserScore(1,scoreService.calcSore(3000))).thenReturn(1);
-        when(buyRecordMapper.buyGood(1,3000,"apple"));
+        when(scoreService.updateUserScore(1, scoreService.calcSore(3000))).thenReturn(1);
+        when(buyRecordMapper.buyGood(1, 3000, "apple")).thenReturn(1);
+
+        int result = buyRecordService.buyGood(1, 3000, "apple");
+
+        Assertions.assertEquals(1, result);
     }
 
 

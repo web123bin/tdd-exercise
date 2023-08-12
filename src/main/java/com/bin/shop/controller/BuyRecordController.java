@@ -1,9 +1,11 @@
 package com.bin.shop.controller;
 
+import com.bin.shop.service.IBuyRecordService;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import javax.annotation.Resource;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -19,10 +21,14 @@ import java.util.Map;
 @RequestMapping("/shop/buy-record")
 public class BuyRecordController {
 
-    @PostMapping
-    public Map<String, Object> buyGood(int id, int useMoney, String goodName) {
-        Map<String, Object> result = new HashMap<>();
+    @Resource
+    private IBuyRecordService buyRecordService;
 
+    @PostMapping
+    public Map<String, Object> buyGood(int userId, int useMoney, String goodName) {
+        buyRecordService.buyGood(userId, useMoney, goodName);
+
+        Map<String, Object> result = new HashMap<>();
         result.put("success", true);
         result.put("message", "消费成功!");
         return result;

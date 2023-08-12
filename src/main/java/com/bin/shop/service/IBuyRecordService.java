@@ -1,7 +1,7 @@
 package com.bin.shop.service;
 
-import com.bin.shop.entity.BuyRecord;
 import com.baomidou.mybatisplus.extension.service.IService;
+import com.bin.shop.entity.BuyRecord;
 
 /**
  * <p>
@@ -13,5 +13,6 @@ import com.baomidou.mybatisplus.extension.service.IService;
  */
 public interface IBuyRecordService extends IService<BuyRecord> {
 
-    int buyGood(int id, int money, String goodName);
+    int buyGood(int userId, int money, String goodName);
+
 }

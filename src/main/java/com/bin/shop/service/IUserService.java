@@ -1,7 +1,7 @@
 package com.bin.shop.service;
 
-import com.bin.shop.entity.User;
 import com.baomidou.mybatisplus.extension.service.IService;
+import com.bin.shop.entity.SysUser;
 
 /**
  * <p>
@@ -11,9 +11,11 @@ import com.baomidou.mybatisplus.extension.service.IService;
  * @author bin
  * @since 2023-08-09
  */
-public interface IUserService extends IService<User> {
+public interface IUserService extends IService<SysUser> {
 
-    int addUser(User user);
+    int addUser(SysUser sysUser);
 
-    User getUser(int i);
+    SysUser getUser(int i);
+
+    SysUser updateUserMoney(int userId, int money);
 }

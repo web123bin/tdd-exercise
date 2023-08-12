@@ -1,11 +1,11 @@
 package com.bin.shop.mapper;
 
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
-import com.bin.shop.entity.User;
+import com.bin.shop.entity.SysUser;
 import org.apache.ibatis.annotations.Param;
 
-public interface ScoreMapper extends BaseMapper<User> {
+public interface ScoreMapper extends BaseMapper<SysUser> {
 
-    int updateUserScore(@Param("id") int id, @Param("money") int money);
+    int updateUserScore(@Param("userId") int userId, @Param("score") int score);
 
 }

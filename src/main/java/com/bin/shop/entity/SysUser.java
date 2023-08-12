@@ -1,9 +1,11 @@
 package com.bin.shop.entity;
 
+import com.baomidou.mybatisplus.annotation.TableName;
+import lombok.Getter;
+import lombok.Setter;
+
 import java.io.Serializable;
 import java.time.LocalDateTime;
-
-import lombok.*;
 
 /**
  * <p>
@@ -15,7 +17,8 @@ import lombok.*;
  */
 @Getter
 @Setter
-public class User implements Serializable {
+@TableName("sys_user")
+public class SysUser implements Serializable {
 
     private static final long serialVersionUID = 1L;
 
@@ -44,6 +47,9 @@ public class User implements Serializable {
      */
     private Integer totalAddMoney;
 
+    /**
+     * 累计消费金额
+     */
     private Integer totalUseMoney;
 
     /**

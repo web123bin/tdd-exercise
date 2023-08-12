@@ -2,9 +2,11 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.bin.shop.mapper.UserMapper">
 
-    <insert id="addUser"></insert>
-    <select id="getUser" resultType="com.bin.shop.entity.User">
-        select *
-        from user where id = #{id};
-    </select>
+    <update id="updateUserMoney">
+        update sys_user
+        set total_add_money = #{totalAddMoney},
+            remain_money    = ${remainMoney}
+        where id = ${userId}
+    </update>
+
 </mapper>

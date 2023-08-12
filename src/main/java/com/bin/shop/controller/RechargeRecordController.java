@@ -1,9 +1,11 @@
 package com.bin.shop.controller;
 
+import com.bin.shop.service.IRechargeRecordService;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import javax.annotation.Resource;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -19,12 +21,16 @@ import java.util.Map;
 @RequestMapping("/shop/recharge-record")
 public class RechargeRecordController {
 
-    @PostMapping
-    public Map<String,Object> addMoney(int id,int addMoney) {
-        Map<String,Object> result = new HashMap<>();
+    @Resource
+    private IRechargeRecordService rechargeRecordService;
 
-        result.put("success",true);
-        result.put("message","充值成功!");
+    @PostMapping
+    public Map<String, Object> addMoney(int userId, int addMoney) {
+        rechargeRecordService.addMoney(userId, addMoney);
+
+        Map<String, Object> result = new HashMap<>();
+        result.put("success", true);
+        result.put("message", "充值成功!");
         return result;
     }
 
