@@ -31,18 +31,13 @@ public class Order {
     private String stateLineItems() {
         StringBuilder output = new StringBuilder();
         for (LineItem lineItem : lineItems) {
-            output.append(lineItem.stateLineItem());
+            output.append(lineItem.state());
         }
         return output.toString();
     }
 
-    private String stateCustomer() {
-        return customer.getName() +
-                customer.getAddress();
-    }
-
     public String generateReceipt() {
-        return stateCustomer() +
+        return customer.stateCustomer() +
                 stateLineItems() +
                 stateTotalSalesTax() +
                 stateTotalAmountWithTax();

@@ -24,14 +24,10 @@ public class LineItem {
 		return totalAmount() + calculateSalesTax();
 	}
 
-	String stateLineItem() {
-		return description +
-				'\t' +
-				price +
-				'\t' +
-				quantity +
-				'\t' +
-				totalAmount() +
-				'\n';
+	String state() {
+		return description + '\t' +
+				price + '\t' +
+				quantity + '\t' +
+				totalAmount() + '\n';
 	}
 }

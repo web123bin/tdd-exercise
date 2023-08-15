@@ -18,4 +18,8 @@ public class Customer {
         return address;
     }
 
+    String stateCustomer() {
+        return getName() +
+                getAddress();
+    }
 }
