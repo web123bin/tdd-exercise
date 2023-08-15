@@ -1,6 +1,7 @@
 package com.bin.refactor;
 
 public class LineItem {
+	public static final double Tax = .10;
 	private final String description;
 	private final double price;
 	private final int quantity;
@@ -16,7 +17,7 @@ public class LineItem {
     }
 
 	double calculateSalesTax() {
-		return totalAmount() * .10;
+		return totalAmount() * Tax;
 	}
 
 	double calculateAmountWithTax() {
