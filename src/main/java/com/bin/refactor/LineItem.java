@@ -1,32 +1,29 @@
 package com.bin.refactor;
 
 public class LineItem {
-    private final String description;
-    private final double price;
-    private final int quantity;
+	private String desc;
+	private double p;
+	private int qty;
 
-    public LineItem(String description, double price, int quantity) {
-        this.description = description;
-        this.price = price;
-        this.quantity = quantity;
-    }
+	public LineItem(String desc, double p, int qty) {
+		this.desc = desc;
+		this.p = p;
+		this.qty = qty;
+	}
+
+	public String getDescription() {
+		return desc;
+	}
+
+	public double getPrice() {
+		return p;
+	}
+
+	public int getQuantity() {
+		return qty;
+	}
 
     double totalAmount() {
-        return price * quantity;
-    }
-
-    double calculateTotalSalesTax() {
-        return totalAmount() * .10;
-    }
-
-    double calculateTotalAmountWithTax() {
-        return totalAmount() + totalAmount() * .10;
-    }
-
-    public String state() {
-        return description + '\t'
-                + price + '\t'
-                + quantity + '\t'
-                + totalAmount() + '\n';
+        return p * qty;
     }
 }
