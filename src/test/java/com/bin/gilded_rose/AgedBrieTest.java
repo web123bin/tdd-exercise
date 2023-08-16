@@ -7,7 +7,7 @@ public class AgedBrieTest {
 
     @Test
     void should_quality_is_50_and_sell_in_decrease_by_1_when_update_given_in_sell_and_quality_is_49() {
-        Good result = new Good("Aged Brie",49,10);
+        Good result = new AgedBreGood("Aged Brie", 49, 10);
 
         result.updateByDay();
 
@@ -17,7 +17,7 @@ public class AgedBrieTest {
 
     @Test
     void should_quality_is_50_and_sell_in_decrease_by_1_when_update_given_in_sell_and_quality_is_50() {
-        Good result = new Good("Aged Brie",50,10);
+        Good result = new AgedBreGood("Aged Brie", 50, 10);
 
         result.updateByDay();
 
@@ -27,7 +27,7 @@ public class AgedBrieTest {
 
     @Test
     void should_quality_is_50_and_sell_in_decrease_by_1_when_update_given_out_sell_and_quality_is_48() {
-        Good result = new Good("Aged Brie",48,0);
+        Good result = new AgedBreGood("Aged Brie", 48, 0);
 
         result.updateByDay();
 
@@ -37,7 +37,7 @@ public class AgedBrieTest {
 
     @Test
     void should_quality_is_50_and_sell_in_decrease_by_1_when_update_given_out_sell_and_quality_is_49() {
-        Good result = new Good("Aged Brie",49,0);
+        Good result = new AgedBreGood("Aged Brie", 49, 0);
 
         result.updateByDay();
 

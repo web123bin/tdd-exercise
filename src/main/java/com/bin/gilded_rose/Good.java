@@ -1,9 +1,9 @@
 package com.bin.gilded_rose;
 
-public class Good {
+public abstract class Good {
     private final String name;
-    private int quality;
-    private int sellIn;
+    protected int quality;
+    protected int sellIn;
 
     public Good(String name, int quality, int sellIn) {
         this.name = name;
@@ -23,35 +23,23 @@ public class Good {
         return sellIn;
     }
 
-    public void updateByDay() {
-        if("Aged Brie".equals(name)) {
-            addQuality();
-            decreaseSellIn();
-            if(sellIn < 0) {
-                addQuality();
-            }
-            return;
-        }
+    abstract void updateByDay();
 
-        decreaseQuality();
-        decreaseSellIn();
-
-        if(sellIn < 0) {
-            decreaseQuality();
-        }
+    protected boolean isExpired() {
+        return sellIn < 0;
     }
 
-    private void decreaseSellIn() {
+    protected void decreaseSellIn() {
         sellIn = sellIn -1;
     }
 
-    private void addQuality() {
+    protected void addQuality() {
         if(quality < 50) {
             quality = quality + 1;
         }
     }
 
-    private void decreaseQuality() {
+    protected void decreaseQuality() {
         if(quality > 0) {
             quality = quality - 1;
         }
