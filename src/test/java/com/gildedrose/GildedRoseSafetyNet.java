@@ -16,7 +16,7 @@ public class GildedRoseSafetyNet {
         String output = TextTestFixture.getBaseline();
         String baseline = Files.asCharSource(new File("src/test/baseline.txt"), UTF_8).read();
 
-        Assertions.assertEquals(baseline,output);
+        Assertions.assertEquals(baseline, output);
     }
 
 }
